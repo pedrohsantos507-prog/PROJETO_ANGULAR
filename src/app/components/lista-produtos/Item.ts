@@ -2,7 +2,10 @@ export class Item{
     idProduto?: number
     descricaoProduto?: string
     valorUnitario?: number
+
     statusItem: boolean = false 
+    selecionado: boolean = false 
+
 /*
 CONSTRUTOR DA CLASSE !
 

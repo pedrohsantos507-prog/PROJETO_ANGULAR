@@ -1,25 +1,44 @@
 <div id="div-form">
-    <h2>Lista de Produtos</h2>
+  <h2>Lista de Produtos</h2>
 
-    <form id="formulario">
-        <label for="descricao">Descrição</label>
-        <input type="text" name="descricao" id="descricao" [(ngMode)] = "descricao_produto">
+  <form id="formulario">
+    <label for="descricao">Descrição</label>
+    <input
+      type="text"
+      name="descricao"
+      id="descricao"
+      placeholder="valor"
+      [(ngModel)]="descricao_produto"
+    />
 
-        <label for="valor_unitario">Valor unitario</label>
-        <input type="number" name="valor_unitario" id="valor_unitario" [(ngMode)] = valor_unitario>
+    <label for="valor_unitario">Valor unitário</label>
+    <input
+      type="number"
+      name="valor_unitario"
+      id="valor_unitario"
+      placeholder="0"
+      [(ngModel)]="valor_unitario"
+    />
 
-        <div id="div-btns">
-            <button type="button" id="btnAdd" (click) = "addItem()">Adicionar</button>
-            <button type="button" id="btnLimpar">Limpar</button>
-        </div>
-    </form>
-    <div id="div-lista">
+    <div id="div-btns">
+      <button type="button" id="btnAdd" (click)="addItem()">Adicionar</button>
 
-        @for(elem of listaItens; track elem.idproduto){
-            <div class="div-item"> {{elem.idproduto}} - {{elem.descricaoProduto}} - R$ {{elem.valorUnitario?.tofixed(2)?.replace('.',',')}} </div>
-        }empty {
-            <div class="div-item">NENHUM ITEM ADICIONADO</div>
-        }
-       
+      <button type="button" id="btnLimpar" (click)="limparTudo()">Limpar</button>
     </div>
+  </form>
+
+  <div id="div-lista">
+    @for (elem of listaItens; track elem.idProduto) {
+      <div class="div-item" [class.selecionado]="elem.selecionado" (click)="selecionarItem(elem)">
+        <input type="checkbox" [checked]="elem.selecionado" />
+
+        &nbsp;
+
+        {{ elem.idProduto }} - {{ elem.descricaoProduto }} - R$
+        {{ elem.valorUnitario?.toFixed(2)?.replace('.', ',') }}
+      </div>
+    } @empty {
+      <div class="div-item">NENHUM ITEM ADICIONADO</div>
+    }
+  </div>
 </div>

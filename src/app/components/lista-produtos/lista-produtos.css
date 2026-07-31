@@ -1,110 +1,132 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #f4f6f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 #div-form {
-    width: 450px;
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 450px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #div-form h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 #formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #formulario label {
-    font-weight: bold;
-    color: #555;
+  font-weight: bold;
+  color: #555;
 }
 
 #formulario input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: 0.3s;
-    font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 15px;
 }
 
 #formulario input:focus {
-    border-color: #1976d2;
-    box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
+  border-color: #1976d2;
+  box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
 }
 
 #div-btns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 #div-btns button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 #btnAdd {
-    background-color: #1976d2;
-    color: white;
+  background-color: #1976d2;
+  color: white;
 }
 
 #btnAdd:hover {
-    background-color: #125ea8;
+  background-color: #125ea8;
 }
 
 #btnLimpar {
-    background-color: #e53935;
-    color: white;
+  background-color: #e53935;
+  color: white;
 }
 
 #btnLimpar:hover {
-    background-color: #c62828;
+  background-color: #c62828;
 }
 
 #div-lista {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+/* ITEM DA LISTA */
 .div-item {
-    background-color: #f8f9fa;
-    border-left: 5px solid #1976d2;
-    padding: 12px;
-    border-radius: 8px;
-    color: #333;
-    font-size: 16px;
-    transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background-color: #f8f9fa;
+  border-left: 5px solid #1976d2;
+  padding: 12px;
+  border-radius: 8px;
+
+  color: #333;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .div-item:hover {
-    background-color: #e3f2fd;
-    transform: translateX(5px);
+  background-color: #e3f2fd;
+  transform: translateX(5px);
+}
+
+/* ITEM SELECIONADO */
+.div-item.selecionado {
+  background-color: #d4edda;
+  border-left-color: #28a745;
+}
+
+/* CHECKBOX */
+.div-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin: 0;
 }
