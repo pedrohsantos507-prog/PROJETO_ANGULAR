@@ -1,9 +1,8 @@
-export class Item{
-    idProduto?: number
-    descricaoProduto?: string
-    valorUnitario?: number
+export class Cidade{
+    idCidade: number = 0;
+    nomeCidade: string = '';
+    numeroEleitores: number = 0;
 
-    statusItem: boolean = false 
     selecionado: boolean = false 
 
 /*

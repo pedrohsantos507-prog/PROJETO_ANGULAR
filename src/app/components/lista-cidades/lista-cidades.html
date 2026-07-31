@@ -1,0 +1,47 @@
+<div id="div-form">
+  <h2>cadastro de cidades</h2>
+
+  <form id="formulario">
+    <label for="cidade">Cidade</label>
+    <input
+      type="text"
+      name="cidade"
+      id="cidade"
+      placeholder="Nome da Cidade"
+      [(ngModel)]="nomeCidade"
+    />
+
+    <label for="eleitores">Numero Eleitores</label>
+    <input
+      type="number"
+      name="eleitores"
+      id="eleitores"
+      placeholder="0"
+      [(ngModel)]="numeroEleitores"
+    />
+
+    <div id="div-btns">
+      <button type="button" id="btnAdd" (click)="addCidade()">Adicionar</button>
+
+      <button type="button" id="btnLimpar" (click)="limparTudo()">Limpar</button>
+    </div>
+  </form>
+
+  <div id="div-lista">
+    @for (cidade of listaCidades; track cidade.idCidade) {
+      <div
+        class="div-item"
+        [class.selecionado]="cidade.selecionado"
+        (click)="selecionarCidade(cidade)"
+      >
+        <input type="checkbox" [checked]="cidade.selecionado" />
+
+        &nbsp;
+
+        {{ cidade.idCidade }} - {{ cidade.nomeCidade }} - {{ cidade.numeroEleitores }} eleitores
+      </div>
+    } @empty {
+      <div class="div-item">NENHUMA CIDADE CADASTRADA</div>
+    }
+  </div>
+</div>
