@@ -14,8 +14,12 @@
         </div>
     </form>
     <div id="div-lista">
-        <div class="div-item"> 1 - Pão - 3,50</div>
-        <div class="div-item"> 2 - Manteiga - 16,00</div>
-        <div class="div-item"> 3 - café - 12,00</div>
+
+        @for(elem of listaItens; track elem.idproduto){
+            <div class="div-item"> {{elem.idproduto}} - {{elem.descricaoProduto}} - R$ {{elem.valorUnitario?.tofixed(2)?.replace('.',',')}} </div>
+        }empty {
+            <div class="div-item">NENHUM ITEM ADICIONADO</div>
+        }
+       
     </div>
 </div>
